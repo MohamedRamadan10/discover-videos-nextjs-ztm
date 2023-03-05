@@ -1,0 +1,54 @@
+@import "@/styles/colors";
+
+.banner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $body-color;
+  padding: 50px 0 100px;
+  .heading {
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+  .desc {
+    margin-top: 20px;
+    line-height: 28px;
+  }
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($body-bg, 0.75);
+      z-index: 2;
+    }
+    img {
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+  .btn {
+    margin-top: 50px;
+  }
+  .data {
+    max-width: 550px;
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+}

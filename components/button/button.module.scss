@@ -1,0 +1,44 @@
+@import "@/styles/colors";
+
+.btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba($body-color, 0.5);
+  border-radius: 50px;
+  padding-right: 20px;
+  transition: 0.3s all ease-in-out;
+  svg {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 50%;
+    background: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    color: $body-color;
+    transition: 0.3s all ease-in-out;
+  }
+  span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: 0.3s all ease-in-out;
+    color: $body-color;
+  }
+  &:hover {
+    @include glassyEffect();
+    svg {
+      box-shadow: 0 0 20px rgba($primary, 0.4);
+      transform: translateX(238%);
+    }
+    span {
+      transform: translateX(-50%);
+    }
+  }
+}

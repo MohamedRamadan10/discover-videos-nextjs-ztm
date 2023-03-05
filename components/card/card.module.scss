@@ -1,0 +1,57 @@
+@import "@/styles/colors";
+
+.card {
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  z-index: 9;
+  &.large {
+    min-height: 434px;
+    height: 434px;
+    min-width: 218px;
+    width: 218px;
+  }
+  &.medium {
+    min-height: 280px;
+    height: 280px;
+    min-width: 158px;
+    width: 158px;
+  }
+  &.small {
+    min-height: 170px;
+    height: 170px;
+    min-width: 300px;
+    width: 300px;
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding-right: 0;
+    svg {
+      @include glassyEffect();
+    }
+    &:hover {
+      svg,
+      span {
+        transform: none;
+      }
+      svg {
+        background: $primary;
+      }
+    }
+  }
+}

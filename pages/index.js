@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Banner from "@/components/banner/banner";
-import Card from "@/components/card/card";
+import Cards from "@/components/cards/cards";
 
 export default function Home() {
   return (
@@ -19,15 +19,11 @@ in Birmingham. Soon, Chester Campbell, an inspector, decides to nab him
 and put an end to the criminal activities."
         imgUrl="https://rare-gallery.com/uploads/posts/538616-peaky-blinders.jpg"
       />
-      <Card
-        imgUrl="https://rare-gallery.com/uploads/posts/538616-peaky-blinders.jpg"
-        size="large"
-      />
-      <Card imgUrl="https://rare-gallery.com/uploads/posts/538616-peaky-blinders.jpg" />
-      <Card
-        imgUrl="https://rare-gallery.com/uploads/posts/538616-peaky-blinders.jpg"
-        size="small"
-      />
+      <div className="cards-wrapper">
+        <Cards title="Disney" size="large" />
+        <Cards title="Action" />
+        <Cards title="Action" size="small" />
+      </div>
     </>
   );
 }

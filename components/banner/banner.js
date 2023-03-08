@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
-import Button from "../button/button";
+import Button from "@/components/button/button";
 import {
   banner,
   heading,
@@ -29,7 +29,7 @@ function Banner({ title, subTitle, imgUrl }) {
         </div>
       </div>
       <div className={bg}>
-        <Image src={imgUrl} fill={true} alt={title} />
+        <Image src={imgUrl} fill={true} sizes={"100vw"} alt={title} />
       </div>
     </div>
   );

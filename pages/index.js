@@ -1,11 +1,15 @@
 import Head from "next/head";
 import Banner from "@/components/banner/banner";
 import Cards from "@/components/cards/cards";
-import { getVideos } from "@/lib/videos";
-import { videos } from "@/data/videos";
+import { getPopularVideos, getVideos } from "@/lib/videos";
 
-export default function Home() {
-	const videosData = getVideos();
+export default function Home({
+	videoBanner,
+	videosDisney,
+	videosSeries,
+	videosAction,
+	videosPopular,
+}) {
 	return (
 		<>
 			<Head>
@@ -16,17 +20,36 @@ export default function Home() {
 				<title>Vidflex</title>
 			</Head>
 			<Banner
-				title={videosData[0].title}
+				title={videoBanner[0].title}
 				subTitle="Tommy Shelby, a dangerous man, leads the Peaky Blinders, a gang based
 in Birmingham. Soon, Chester Campbell, an inspector, decides to nab him
 and put an end to the criminal activities."
-				imgUrl={videosData[0].imgUrl}
+				imgUrl={videoBanner[0].imgUrl}
 			/>
 			<div className="cards-wrapper">
-				<Cards videos={videosData} size="large" title="Movies" />
-				<Cards videos={videosData} title="Movies" />
-				<Cards videos={videosData} size="small" title="Movies" />
+				<Cards videos={videosDisney} size="large" title="Disney" />
+				<Cards videos={videosSeries} title="Series" />
+				<Cards videos={videosAction} size="small" title="Action" />
+				<Cards videos={videosPopular} title="Popular" />
 			</div>
 		</>
 	);
 }
+
+export const getServerSideProps = async (ctx) => {
+	const videoBanner = await getVideos("Avengers%20Movie");
+	const videosDisney = await getVideos("Disney%20Trailer");
+	const videosSeries = await getVideos("Series%20Trailer");
+	const videosAction = await getVideos("Action%20Trailer");
+	const videosPopular = await getPopularVideos();
+
+	return {
+		props: {
+			videoBanner,
+			videosDisney,
+			videosSeries,
+			videosAction,
+			videosPopular,
+		},
+	};
+};

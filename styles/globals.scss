@@ -3,50 +3,54 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-	max-width: 100vw;
-	overflow-x: hidden;
-	background: $body-bg;
-	color: $body-color;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: $body-bg;
+  color: $body-color;
 }
 
 main {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-	max-width: 1320px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 30px;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .cards-wrapper {
-	padding-bottom: 100px;
-	& > div {
-		position: relative;
-		z-index: 2;
-		&:not(:first-child) {
-			margin-top: 50px;
-		}
-	}
+  padding-bottom: 100px;
+  & > div {
+    position: relative;
+    z-index: 2;
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+  }
 }
 
 .slick-slide {
-	padding: 10px 10px 30px;
+  padding: 10px 10px 30px;
 }
 .slick-list {
-	padding: 20px 10px;
-	margin-left: -10px;
+  padding: 20px 10px;
+  margin-left: -10px;
+}
+
+.mx-auto {
+  margin: 0 auto;
 }

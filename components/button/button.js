@@ -7,11 +7,14 @@ const roboto = Roboto({
   weight: ["400"],
 });
 
-function Button({ videoTitle, className }) {
+function Button({ className, btnText, submit }) {
   return (
-    <button className={`${btn} ${className}`}>
+    <button
+      className={`${btn} ${className ? className : ""}`}
+      type={submit ? "submit" : "button"}
+    >
       <Play />
-      {videoTitle && <span className={roboto.className}>Play Trailer</span>}
+      {btnText && <span className={roboto.className}>{btnText}</span>}
     </button>
   );
 }

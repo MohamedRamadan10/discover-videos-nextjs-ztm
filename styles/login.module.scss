@@ -1,0 +1,60 @@
+@import "@/styles/colors";
+
+.login {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($body-bg, 0.85);
+  }
+  .form {
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+    width: 100%;
+    background: rgba($body-bg, 0.75);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba($body-color, 0.1);
+    .heading {
+      font-size: 20px;
+      color: $primary;
+      letter-spacing: 2px;
+    }
+    .formControl {
+      width: 100%;
+      display: block;
+      padding: 15px 20px;
+      border-radius: 50px;
+      background: rgba($body-color, 0.1);
+      color: $body-color;
+      border: 1px solid rgba($body-color, 0.5);
+      margin: 30px 0;
+      font-size: 18px;
+      transition: 0.3s all ease-in-out;
+      &:focus {
+        outline: none;
+        border-color: $body-color;
+      }
+    }
+  }
+}

@@ -7,11 +7,12 @@ const roboto = Roboto({
   weight: ["400"],
 });
 
-function Button({ className, btnText, submit }) {
+function Button({ className, btnText, submit, onClick }) {
   return (
     <button
       className={`${btn} ${className ? className : ""}`}
       type={submit ? "submit" : "button"}
+      onClick={onClick}
     >
       <Play />
       {btnText && <span className={roboto.className}>{btnText}</span>}

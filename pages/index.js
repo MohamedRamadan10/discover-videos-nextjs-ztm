@@ -1,8 +1,8 @@
-import Head from "next/head";
 import Banner from "@/components/banner/banner";
 import Cards from "@/components/cards/cards";
 import { getPopularVideos, getVideos } from "@/lib/videos";
 import Seo from "@/components/seo/seo";
+import { magicAuth } from "@/lib/magic-auth";
 
 export default function Home({
   videoBanner,
@@ -11,6 +11,7 @@ export default function Home({
   videosAction,
   videosPopular,
 }) {
+  console.log(magicAuth);
   return (
     <>
       <Seo />

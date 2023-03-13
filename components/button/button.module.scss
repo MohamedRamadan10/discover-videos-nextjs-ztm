@@ -9,12 +9,16 @@
   background: transparent;
   border: 1px solid rgba($body-color, 0.5);
   border-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   padding-right: 20px;
   transition: 0.3s all ease-in-out;
-  min-width: 155.2px;
+  width: 155.2px;
+  position: relative;
+  height: 42px;
   svg {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     border-radius: 50%;
     background: $primary;
@@ -24,26 +28,27 @@
     position: relative;
     z-index: 2;
     color: $body-color;
+    position: absolute;
+    right: -14px;
+    left: auto;
     transition: 0.3s all ease-in-out;
   }
   span {
     display: inline-block;
-    margin-left: 10px;
     font-size: 16px;
     transition: 0.3s all ease-in-out;
     color: $body-color;
-    min-width: 79.2px;
-    text-align: right;
+    position: absolute;
+    top: 50%;
+    right: auto;
+    left: 0;
+    white-space: nowrap;
+    transform: translate(14px, -50%);
   }
   &:hover {
     @include glassyEffect();
     svg {
       box-shadow: 0 0 20px rgba($primary, 0.4);
-      transform: translateX(238%);
-    }
-    span {
-      transform: translateX(-50%);
-      text-align: left;
     }
   }
   .btn {
